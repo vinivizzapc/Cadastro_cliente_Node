@@ -3,7 +3,6 @@ import { Subscription } from 'rxjs';
 import { Cliente } from '../cliente.model';
 import { ClienteService } from '../cliente.service';
 
-
 @Component({
   selector: 'app-cliente-lista',
   templateUrl: './cliente-lista.component.html',
@@ -22,7 +21,7 @@ export class ClienteListaComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.clientes = this.clienteService.getClientes();
+    this.clienteService.getClientes();
     this.clientesSubscription = this.clienteService
       .getListaDeClientesAtualizadaObservable()
       .subscribe((clientes: Cliente[]) => {
