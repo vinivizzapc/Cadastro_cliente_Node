@@ -16,6 +16,7 @@ export class ClienteInserirComponent {
       return;
     }
     this.clienteService.adicionarCliente(
+      form.value.id,
       form.value.nome,
       form.value.fone,
       form.value.email
